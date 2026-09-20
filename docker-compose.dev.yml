@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgis/postgis:17-3.5
+    environment:
+      POSTGRES_USER: hike
+      POSTGRES_PASSWORD: hike
+      POSTGRES_DB: hikechievement
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_hikechievement_data:/var/lib/postgresql/data
+
+volumes:
+  pg_hikechievement_data:
